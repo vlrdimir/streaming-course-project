@@ -92,6 +92,7 @@
 
         .invoice-panel {
             text-align: right;
+            padding-top: 4px;
         }
 
         .invoice-title {
@@ -119,7 +120,7 @@
         }
 
         .status-pill.pending { background: #fff4d6; color: #9a6700; }
-        .status-pill.paid { background: #ddfbe7; color: #137333; }
+        .status-pill.paid { background: #e9fff0; color: #169246; }
         .status-pill.failed { background: #fee2e2; color: #b42318; }
         .status-pill.expired { background: #e8edf5; color: #475467; }
         .status-pill.cancelled { background: #eceff3; color: #344054; }
@@ -215,6 +216,7 @@
             border: 1px solid #dce8f8;
             padding: 16px;
             text-align: right;
+            box-shadow: inset 0 0 0 1px #f2f7ff;
         }
 
         .price-label {
