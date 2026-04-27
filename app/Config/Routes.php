@@ -88,6 +88,7 @@ $routes->group('user', ['filter' => 'user'], function($routes) {
     // Dashboard
     $routes->get('dashboard', [UserDashboardController::class, 'index']);
     $routes->get('payment-history', [UserDashboardController::class, 'paymentHistory']);
+    $routes->get('payment-history/invoice/(:num)', [UserDashboardController::class, 'invoice/$1']);
     
     // Courses
     $routes->get('courses', [UserCourseController::class, 'index']);
