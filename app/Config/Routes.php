@@ -87,6 +87,7 @@ $routes->group('api', ['filter' => 'user'], function ($routes) {
 $routes->group('user', ['filter' => 'user'], function($routes) {
     // Dashboard
     $routes->get('dashboard', [UserDashboardController::class, 'index']);
+    $routes->get('payment-history', [UserDashboardController::class, 'paymentHistory']);
     
     // Courses
     $routes->get('courses', [UserCourseController::class, 'index']);

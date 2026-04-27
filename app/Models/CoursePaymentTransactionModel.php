@@ -175,6 +175,31 @@ class CoursePaymentTransactionModel extends Model
         return $transaction ?: null;
     }
 
+    public function findRecentTransactionsForUser(int $userId, int $limit = 5): array
+    {
+        return $this->select('course_payment_transactions.*, courses.title AS course_title, courses.slug AS course_slug')
+            ->join('courses', 'courses.id = course_payment_transactions.course_id', 'left')
+            ->where('course_payment_transactions.user_id', $userId)
+            ->orderBy('course_payment_transactions.created_at', 'DESC')
+            ->findAll($limit);
+    }
+
+    public function findTransactionsForUser(int $userId): array
+    {
+        return $this->select('course_payment_transactions.*, courses.title AS course_title, courses.slug AS course_slug')
+            ->join('courses', 'courses.id = course_payment_transactions.course_id', 'left')
+            ->where('course_payment_transactions.user_id', $userId)
+            ->orderBy('course_payment_transactions.created_at', 'DESC')
+            ->findAll();
+    }
+
+    public function countTransactionsByStatusForUser(int $userId, string $status): int
+    {
+        return $this->where('user_id', $userId)
+            ->where('status', $status)
+            ->countAllResults();
+    }
+
     private function extractIdentifier(array $payload, array $keys): ?string
     {
         foreach ($keys as $key) {

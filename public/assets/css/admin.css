@@ -31,6 +31,104 @@
   --bs-dark: #212529;
 }
 
+.premium-overview-card {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 52%, #eff6ff 100%);
+  border-radius: 1.25rem;
+}
+
+.premium-overview-badge {
+  background: rgba(249, 115, 22, 0.12);
+  color: #c2410c;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.text-premium-muted {
+  color: #5b6473;
+  max-width: 680px;
+}
+
+.premium-overview-pill {
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  color: #334155;
+}
+
+.premium-overview-pill strong {
+  font-size: 1.9rem;
+  line-height: 1;
+  color: #0f172a;
+}
+
+.premium-stat-card {
+  border-radius: 1.25rem;
+  background: #ffffff;
+}
+
+.premium-stat-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: #7c3aed;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.premium-stat-value {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: #0f172a;
+}
+
+.premium-stat-note {
+  margin-top: 0.65rem;
+  color: #64748b;
+}
+
+.premium-stat-helper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  color: #334155;
+  font-size: 0.92rem;
+}
+
+.premium-stat-helper span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.premium-stat-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.premium-stat-icon.revenue {
+  background: rgba(249, 115, 22, 0.12);
+  color: #ea580c;
+}
+
+.premium-stat-icon.courses {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+}
+
 .sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
   padding: 1.75rem 1rem 0.75rem;
   font-size: 0.75rem;
