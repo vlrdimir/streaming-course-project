@@ -158,7 +158,7 @@ class PaymentCallbackController extends BaseController
         }
 
         return redirect()
-            ->to(site_url('user/dashboard'))
+            ->to(site_url('user/payment-history'))
             ->with($flashKey, $statusMeta['message']);
     }
 
