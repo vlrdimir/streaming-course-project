@@ -6,9 +6,49 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Dashboard</li>
     </ol>
-    
+
     <!-- Dashboard Cards -->
     <div class="row">
+        <div class="col-xl-6 col-md-6">
+            <div class="premium-stat-card card border-0 shadow-sm mb-4 h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start gap-3">
+                        <div>
+                            <span class="premium-stat-kicker">Penjualan premium</span>
+                            <h3 class="premium-stat-value"><?= esc($premiumStats['revenueDisplay']) ?></h3>
+                            <p class="premium-stat-note mb-3"><?= esc($premiumStats['revenueNote']) ?></p>
+                            <div class="premium-stat-helper">
+                                <span><i class="fas fa-receipt"></i> <?= number_format($premiumStats['totalTransactions']) ?> transaksi sukses</span>
+                                <span><i class="fas fa-users"></i> <?= number_format($premiumStats['uniqueBuyers']) ?> pembeli</span>
+                            </div>
+                        </div>
+                        <div class="premium-stat-icon revenue">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-6">
+            <div class="premium-stat-card card border-0 shadow-sm mb-4 h-100">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start gap-3">
+                        <div>
+                            <span class="premium-stat-kicker">Course premium terbeli</span>
+                            <h3 class="premium-stat-value"><?= number_format($premiumStats['totalTransactions']) ?></h3>
+                            <p class="premium-stat-note mb-3">Jumlah seluruh pembelian course premium yang sudah berhasil dibayar.</p>
+                            <div class="premium-stat-helper">
+                                <span><i class="fas fa-book"></i> <?= number_format($premiumStats['uniqueCourses']) ?> judul course terjual</span>
+                                <span><i class="fas fa-bolt"></i> Cocok untuk lihat minat beli</span>
+                            </div>
+                        </div>
+                        <div class="premium-stat-icon courses">
+                            <i class="fas fa-cart-shopping"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
                 <div class="card-body">
@@ -153,40 +193,44 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Course Status Chart
-    var ctx = document.getElementById("courseStatusChart");
-    var myPieChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Published", "Private", "Draft"],
-            datasets: [{
-                data: [<?= $publishedCourses ?>, <?= $privateCourses ?>, <?= $draftCourses ?>],
-                backgroundColor: ['#28a745', '#ffc107', '#6c757d'],
-            }],
-        },
-    });
-    
-    // Enrollments Chart (placeholder data)
-    var ctx2 = document.getElementById("enrollmentsChart");
-    var myBarChart = new Chart(ctx2, {
-        type: 'bar',
-        data: {
-            labels: ["January", "February", "March", "April", "May", "June"],
-            datasets: [{
-                label: "Enrollments",
-                backgroundColor: "rgba(2,117,216,1)",
-                borderColor: "rgba(2,117,216,1)",
-                data: [4215, 5312, 6251, 7841, 9821, 14984],
-            }],
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
+    const courseStatusCanvas = document.getElementById("courseStatusChart");
+
+    if (courseStatusCanvas) {
+        new Chart(courseStatusCanvas, {
+            type: 'pie',
+            data: {
+                labels: ["Published", "Private", "Draft"],
+                datasets: [{
+                    data: [<?= $publishedCourses ?>, <?= $privateCourses ?>, <?= $draftCourses ?>],
+                    backgroundColor: ['#28a745', '#ffc107', '#6c757d'],
+                }],
+            },
+        });
+    }
+
+    const enrollmentsCanvas = document.getElementById("enrollmentsChart");
+
+    if (enrollmentsCanvas) {
+        new Chart(enrollmentsCanvas, {
+            type: 'bar',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June"],
+                datasets: [{
+                    label: "Enrollments",
+                    backgroundColor: "rgba(2,117,216,1)",
+                    borderColor: "rgba(2,117,216,1)",
+                    data: [4215, 5312, 6251, 7841, 9821, 14984],
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    });
+        });
+    }
 </script>
 <?= $this->endSection() ?>
 
