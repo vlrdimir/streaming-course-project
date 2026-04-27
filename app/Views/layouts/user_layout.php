@@ -102,6 +102,7 @@
                 <a href="<?= site_url('/') ?>" class="block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-700">Home</a>
                 <a href="<?= site_url('user/courses') ?>" class="block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-700">Courses</a>
                 <a href="<?= site_url('user/dashboard') ?>" class="block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-700">My Dashboard</a>
+                <a href="<?= site_url('user/payment-history') ?>" class="block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-700">Payment History</a>
             </div>
         </div>
     </nav>
@@ -119,6 +120,9 @@
                     </a>
                     <a class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md text-foreground hover:bg-gray-100 <?= uri_string() == 'user/courses/enrolled' ? 'active' : '' ?>" href="<?= site_url('user/courses/enrolled') ?>">
                         <i class="bi bi-journal-check mr-3 flex-shrink-0 h-5 w-5"></i> My Courses
+                    </a>
+                    <a class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md text-foreground hover:bg-gray-100 <?= uri_string() == 'user/payment-history' ? 'active' : '' ?>" href="<?= site_url('user/payment-history') ?>">
+                        <i class="bi bi-receipt mr-3 flex-shrink-0 h-5 w-5"></i> Payment History
                     </a>
                     <a class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md text-foreground hover:bg-gray-100 <?= uri_string() == 'user/profile' ? 'active' : '' ?>" href="<?= site_url('user/profile') ?>">
                         <i class="bi bi-person mr-3 flex-shrink-0 h-5 w-5"></i> Profile
