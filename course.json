@@ -1,0 +1,479 @@
+{
+  "courses": [
+    {
+      "title": "Dasar Pemrograman Python",
+      "slug": "dasar-pemrograman-python",
+      "short_description": "Pelajari dasar-dasar bahasa pemrograman Python untuk pemula",
+      "description": "Kursus ini akan mengajarkan Anda konsep dasar Python mulai dari variabel, tipe data, struktur kontrol, fungsi, hingga penanganan file. Cocok untuk pemula yang ingin memulai karir di bidang data science, web development, atau automasi.",
+      "level": "Beginner",
+      "duration": 480,
+      "categories": ["Programming", "Python", "Data Science"],
+      "modules": [
+        {
+          "title": "Pengenalan Python",
+          "description": "Memahami sejarah Python dan cara menginstal Python di komputer Anda",
+          "lessons": [
+            {
+              "title": "Sejarah dan Keunggulan Python",
+              "description_content": "Penjelasan tentang sejarah bahasa pemrograman Python, keunggulannya dibandingkan bahasa lain, dan penerapannya di dunia industri.",
+              "video_url": "https://www.youtube.com/watch?v=Y8Tko2YC5hA",
+              "video_duration": 720
+            },
+            {
+              "title": "Instalasi Python dan IDE",
+              "description_content": "Panduan langkah demi langkah untuk menginstal Python dan memilih IDE yang tepat untuk pengembangan.",
+              "video_url": "https://www.youtube.com/watch?v=YYXdXT2l-Gg",
+              "video_duration": 900
+            }
+          ]
+        },
+        {
+          "title": "Variabel dan Tipe Data",
+          "description": "Mempelajari konsep variabel dan berbagai tipe data di Python",
+          "lessons": [
+            {
+              "title": "Variabel dan Operasi Dasar",
+              "description_content": "Belajar cara membuat variabel, mengubah nilai, dan operasi aritmatika dasar di Python.",
+              "video_url": "https://www.youtube.com/watch?v=khKv-8q7YmY",
+              "video_duration": 1200
+            },
+            {
+              "title": "Tipe Data di Python",
+              "description_content": "Memahami tipe data string, integer, float, boolean, list, tuple, dan dictionary di Python.",
+              "video_url": "https://www.youtube.com/watch?v=gCCVsvgR2KU",
+              "video_duration": 1500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "JavaScript Modern untuk Pengembangan Web",
+      "slug": "javascript-modern-untuk-pengembangan-web",
+      "short_description": "Kuasai JavaScript modern untuk membangun aplikasi web interaktif",
+      "description": "Kursus komprehensif tentang JavaScript modern, ES6+, dan penerapannya dalam pengembangan web. Pelajari konsep asynchronous, promises, async/await, dan cara membangun aplikasi web interaktif.",
+      "level": "Intermediate",
+      "duration": 720,
+      "categories": ["Programming", "JavaScript", "Web Development"],
+      "modules": [
+        {
+          "title": "Fundamental JavaScript Modern",
+          "description": "Memahami fitur-fitur terbaru di JavaScript ES6+",
+          "lessons": [
+            {
+              "title": "Pengenalan ES6+ dan Fitur Baru",
+              "description_content": "Mengenal fitur-fitur baru di JavaScript ES6+ seperti arrow functions, template literals, destructuring, dan spread operator.",
+              "video_url": "https://www.youtube.com/watch?v=NCwa_xi0Uuc",
+              "video_duration": 1800
+            },
+            {
+              "title": "Let, Const, dan Scope di JavaScript",
+              "description_content": "Memahami perbedaan var, let, dan const, serta konsep scope di JavaScript modern.",
+              "video_url": "https://www.youtube.com/watch?v=sjyJBL5fkp8",
+              "video_duration": 1500
+            }
+          ]
+        },
+        {
+          "title": "Asynchronous JavaScript",
+          "description": "Mempelajari penanganan operasi asynchronous di JavaScript",
+          "lessons": [
+            {
+              "title": "Callback dan Promise",
+              "description_content": "Memahami konsep callback dan promise untuk menangani operasi asynchronous di JavaScript.",
+              "video_url": "https://www.youtube.com/watch?v=PoRJizFvM7s",
+              "video_duration": 2100
+            },
+            {
+              "title": "Async/Await dalam JavaScript",
+              "description_content": "Belajar menggunakan async/await untuk menulis kode asynchronous yang lebih rapi dan mudah dibaca.",
+              "video_url": "https://www.youtube.com/watch?v=V_Kr9OSfDeU",
+              "video_duration": 1800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pemrograman Golang Dasar",
+      "slug": "pemrograman-golang-dasar",
+      "short_description": "Belajar bahasa pemrograman Go untuk backend development",
+      "description": "Kursus ini mengajarkan dasar-dasar bahasa pemrograman Go (Golang), termasuk syntax, struktur data, concurrency, dan pembuatan API. Go adalah bahasa yang didesain oleh Google untuk efisiensi dan performa tinggi dalam pengembangan aplikasi backend.",
+      "level": "Beginner",
+      "duration": 540,
+      "categories": ["Programming", "Golang", "Backend Development"],
+      "modules": [
+        {
+          "title": "Pengenalan Go",
+          "description": "Memahami konsep dasar bahasa Go dan lingkungan pengembangannya",
+          "lessons": [
+            {
+              "title": "Pengenalan dan Instalasi Go",
+              "description_content": "Sejarah Go, keunggulannya, dan cara menginstal Go di berbagai sistem operasi.",
+              "video_url": "https://www.youtube.com/watch?v=C8LgvuEBraI",
+              "video_duration": 1200
+            },
+            {
+              "title": "Struktur Program Go",
+              "description_content": "Struktur dasar program Go, package, import, dan fungsi main.",
+              "video_url": "https://www.youtube.com/watch?v=YS4e4q9oBaU",
+              "video_duration": 1500
+            }
+          ]
+        },
+        {
+          "title": "Concurrency di Go",
+          "description": "Memahami konsep goroutine dan channel untuk pemrograman concurrent",
+          "lessons": [
+            {
+              "title": "Goroutine dan Concurrency",
+              "description_content": "Pengenalan konsep goroutine untuk menjalankan fungsi secara concurrent.",
+              "video_url": "https://www.youtube.com/watch?v=LvgVSSpwND8",
+              "video_duration": 1800
+            },
+            {
+              "title": "Channel dan Komunikasi antar Goroutine",
+              "description_content": "Menggunakan channel untuk komunikasi dan sinkronisasi antar goroutine.",
+              "video_url": "https://www.youtube.com/watch?v=KBZlN0izeiY",
+              "video_duration": 1700
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pemrograman Rust untuk Sistem dan Web",
+      "slug": "pemrograman-rust-untuk-sistem-dan-web",
+      "short_description": "Mempelajari bahasa Rust untuk pengembangan aplikasi aman dan berkinerja tinggi",
+      "description": "Kursus menyeluruh tentang bahasa pemrograman Rust yang fokus pada keamanan memori dan performa. Pelajari fitur-fitur unik Rust seperti ownership, borrowing, lifetime, dan cara membangun aplikasi sistem dan web yang handal.",
+      "level": "Intermediate",
+      "duration": 600,
+      "categories": ["Programming", "Rust", "System Programming"],
+      "modules": [
+        {
+          "title": "Dasar-dasar Rust",
+          "description": "Memahami konsep dasar dan fitur unik Rust",
+          "lessons": [
+            {
+              "title": "Pengenalan Rust dan Instalasi",
+              "description_content": "Mengenal sejarah Rust, keunggulannya, dan cara menginstal Rust menggunakan rustup.",
+              "video_url": "https://www.youtube.com/watch?v=5C_HPTJg5ek",
+              "video_duration": 1500
+            },
+            {
+              "title": "Ownership, Borrowing, dan Lifetime",
+              "description_content": "Memahami konsep unik Rust tentang ownership, borrowing, dan lifetime untuk manajemen memori yang aman.",
+              "video_url": "https://www.youtube.com/watch?v=8M0QBVIxV1o",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Pemrograman Web dengan Rust",
+          "description": "Membangun aplikasi web menggunakan Rust dan framework Actix Web",
+          "lessons": [
+            {
+              "title": "Pengenalan Actix Web",
+              "description_content": "Memahami framework Actix Web untuk membuat aplikasi web dengan Rust.",
+              "video_url": "https://www.youtube.com/watch?v=OcFRCuywPKg",
+              "video_duration": 1800
+            },
+            {
+              "title": "Membuat REST API dengan Rust",
+              "description_content": "Langkah-langkah membuat REST API sederhana menggunakan Rust dan Actix Web.",
+              "video_url": "https://www.youtube.com/watch?v=MtHyTjMoqf8",
+              "video_duration": 2400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Flutter & Dart untuk Pengembangan Aplikasi Mobile",
+      "slug": "flutter-dart-untuk-pengembangan-aplikasi-mobile",
+      "short_description": "Belajar membangun aplikasi mobile cross-platform dengan Flutter dan Dart",
+      "description": "Kursus ini mengajarkan pengembangan aplikasi mobile cross-platform menggunakan Flutter dan bahasa pemrograman Dart. Pelajari cara membuat UI menarik, mengelola state, dan mengimplementasikan fitur-fitur umum aplikasi mobile modern.",
+      "level": "Beginner",
+      "duration": 720,
+      "categories": ["Programming", "Flutter", "Dart", "Mobile Development"],
+      "modules": [
+        {
+          "title": "Dasar-dasar Dart",
+          "description": "Memahami sintaks dan konsep pemrograman Dart",
+          "lessons": [
+            {
+              "title": "Pengenalan Dart",
+              "description_content": "Mempelajari dasar-dasar bahasa pemrograman Dart, sintaks, tipe data, dan struktur kontrol.",
+              "video_url": "https://www.youtube.com/watch?v=Ej_Pcr4uC2Q",
+              "video_duration": 1800
+            },
+            {
+              "title": "Pemrograman Berorientasi Objek dengan Dart",
+              "description_content": "Memahami konsep OOP dalam Dart: class, inheritance, interface, dan mixin.",
+              "video_url": "https://www.youtube.com/watch?v=JfIvPDPUFo4",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Membangun UI dengan Flutter",
+          "description": "Mempelajari cara membuat antarmuka pengguna dengan Flutter",
+          "lessons": [
+            {
+              "title": "Widget dan Layout di Flutter",
+              "description_content": "Memahami konsep widget dan layout untuk membangun UI yang responsif di Flutter.",
+              "video_url": "https://www.youtube.com/watch?v=b_sQ9bMltGU",
+              "video_duration": 2400
+            },
+            {
+              "title": "State Management di Flutter",
+              "description_content": "Mempelajari berbagai teknik pengelolaan state di Flutter seperti setState, Provider, dan Bloc.",
+              "video_url": "https://www.youtube.com/watch?v=3tm-R7ymwhc",
+              "video_duration": 2700
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pengembangan Web dengan PHP dan Laravel",
+      "slug": "pengembangan-web-dengan-php-dan-laravel",
+      "short_description": "Belajar membuat aplikasi web dengan PHP dan framework Laravel",
+      "description": "Kursus ini mengajarkan pengembangan aplikasi web menggunakan PHP dan framework Laravel. Pelajari konsep MVC, database migration, Eloquent ORM, autentikasi, dan deployment aplikasi Laravel ke server produksi.",
+      "level": "Intermediate",
+      "duration": 660,
+      "categories": ["Programming", "PHP", "Laravel", "Web Development"],
+      "modules": [
+        {
+          "title": "Dasar-dasar Laravel",
+          "description": "Memahami konsep dasar dan fitur framework Laravel",
+          "lessons": [
+            {
+              "title": "Pengenalan Laravel dan Instalasi",
+              "description_content": "Mengenal framework Laravel, keunggulannya, dan cara menginstal Laravel menggunakan Composer.",
+              "video_url": "https://www.youtube.com/watch?v=ImtZ5yENzgE",
+              "video_duration": 1800
+            },
+            {
+              "title": "Routing dan Controller",
+              "description_content": "Memahami sistem routing Laravel dan implementasi controller untuk menangani request.",
+              "video_url": "https://www.youtube.com/watch?v=CjA79XhHVQI",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Database dan Eloquent ORM",
+          "description": "Mempelajari interaksi dengan database menggunakan Eloquent ORM",
+          "lessons": [
+            {
+              "title": "Migration dan Seeder",
+              "description_content": "Belajar membuat skema database menggunakan migration dan mengisi data awal dengan seeder.",
+              "video_url": "https://www.youtube.com/watch?v=k5tCk7bsiA4",
+              "video_duration": 1800
+            },
+            {
+              "title": "Model dan Relasi Eloquent",
+              "description_content": "Memahami cara membuat model Eloquent dan mendefinisikan relasi antar model.",
+              "video_url": "https://www.youtube.com/watch?v=3xiIOgYdbiE",
+              "video_duration": 2400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pengembangan API dengan Node.js dan Express",
+      "slug": "pengembangan-api-dengan-nodejs-dan-express",
+      "short_description": "Belajar membuat RESTful API dengan Node.js dan Express",
+      "description": "Kursus ini mengajarkan cara membangun RESTful API menggunakan Node.js dan framework Express. Pelajari cara mendesain API, autentikasi dengan JWT, validasi input, dan integrasi dengan database MongoDB.",
+      "level": "Intermediate",
+      "duration": 540,
+      "categories": ["Programming", "Node.js", "API Development", "Backend"],
+      "modules": [
+        {
+          "title": "Dasar-dasar Node.js dan Express",
+          "description": "Memahami konsep dasar Node.js dan framework Express",
+          "lessons": [
+            {
+              "title": "Pengenalan Node.js dan Express",
+              "description_content": "Mengenal Node.js, NPM, dan cara membuat server sederhana dengan Express.",
+              "video_url": "https://www.youtube.com/watch?v=L72fhGm1tfE",
+              "video_duration": 1800
+            },
+            {
+              "title": "Routing dan Middleware",
+              "description_content": "Memahami sistem routing Express dan penggunaan middleware untuk memproses request.",
+              "video_url": "https://www.youtube.com/watch?v=lY6icfhap2o",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Autentikasi dan Database",
+          "description": "Mengimplementasikan autentikasi dan koneksi database",
+          "lessons": [
+            {
+              "title": "Autentikasi dengan JWT",
+              "description_content": "Belajar mengimplementasikan autentikasi menggunakan JSON Web Token (JWT).",
+              "video_url": "https://www.youtube.com/watch?v=7nafaH9SddU",
+              "video_duration": 2400
+            },
+            {
+              "title": "Integrasi dengan MongoDB",
+              "description_content": "Menghubungkan API Express dengan database MongoDB menggunakan Mongoose.",
+              "video_url": "https://www.youtube.com/watch?v=WDrU305J1yw",
+              "video_duration": 2100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Machine Learning dengan Python dan TensorFlow",
+      "slug": "machine-learning-dengan-python-dan-tensorflow",
+      "short_description": "Pelajari dasar-dasar machine learning menggunakan Python dan TensorFlow",
+      "description": "Kursus ini mengajarkan konsep dasar machine learning dan implementasinya menggunakan Python dan framework TensorFlow. Pelajari algoritma klasifikasi, regresi, neural network, dan cara mengevaluasi model machine learning.",
+      "level": "Intermediate",
+      "duration": 720,
+      "categories": [
+        "Programming",
+        "Python",
+        "Machine Learning",
+        "Data Science"
+      ],
+      "modules": [
+        {
+          "title": "Dasar-dasar Machine Learning",
+          "description": "Memahami konsep dasar dan jenis-jenis machine learning",
+          "lessons": [
+            {
+              "title": "Pengenalan Machine Learning",
+              "description_content": "Memahami apa itu machine learning, jenis-jenisnya, dan aplikasinya di dunia nyata.",
+              "video_url": "https://www.youtube.com/watch?v=7eh4d6sabA0",
+              "video_duration": 1800
+            },
+            {
+              "title": "Preprocessing Data",
+              "description_content": "Belajar teknik preprocessing data seperti normalisasi, encoding, dan splitting dataset.",
+              "video_url": "https://www.youtube.com/watch?v=V0u6bxQOUJ8",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Deep Learning dengan TensorFlow",
+          "description": "Mempelajari neural network dan implementasinya dengan TensorFlow",
+          "lessons": [
+            {
+              "title": "Pengenalan Neural Network",
+              "description_content": "Memahami konsep neural network, arsitektur, dan cara kerjanya.",
+              "video_url": "https://www.youtube.com/watch?v=aircAruvnKk",
+              "video_duration": 2400
+            },
+            {
+              "title": "Implementasi CNN dengan TensorFlow",
+              "description_content": "Belajar implementasi Convolutional Neural Network (CNN) untuk klasifikasi gambar.",
+              "video_url": "https://www.youtube.com/watch?v=jH1zcaxnPaM",
+              "video_duration": 2700
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Data Science dengan Python",
+      "slug": "data-science-dengan-python",
+      "short_description": "Belajar analisis dan visualisasi data menggunakan Python",
+      "description": "Kursus ini mengajarkan teknik analisis dan visualisasi data menggunakan Python dan library seperti NumPy, Pandas, dan Matplotlib. Pelajari cara membersihkan data, melakukan eksplorasi, dan membuat visualisasi yang informatif.",
+      "level": "Beginner",
+      "duration": 480,
+      "categories": ["Programming", "Python", "Data Science", "Data Analysis"],
+      "modules": [
+        {
+          "title": "Manipulasi Data dengan Pandas",
+          "description": "Mempelajari manipulasi dan analisis data menggunakan Pandas",
+          "lessons": [
+            {
+              "title": "Pengenalan Pandas",
+              "description_content": "Memahami struktur data Series dan DataFrame di Pandas dan operasi dasar.",
+              "video_url": "https://www.youtube.com/watch?v=vmEHCJofslg",
+              "video_duration": 1800
+            },
+            {
+              "title": "Cleaning dan Transformasi Data",
+              "description_content": "Belajar teknik pembersihan dan transformasi data menggunakan Pandas.",
+              "video_url": "https://www.youtube.com/watch?v=ZyhVh-qRZPA",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Visualisasi Data",
+          "description": "Mempelajari teknik visualisasi data dengan Matplotlib dan Seaborn",
+          "lessons": [
+            {
+              "title": "Dasar-dasar Matplotlib",
+              "description_content": "Memahami konsep dasar visualisasi data dengan Matplotlib.",
+              "video_url": "https://www.youtube.com/watch?v=UO98lJQ3QGI",
+              "video_duration": 1800
+            },
+            {
+              "title": "Visualisasi Lanjutan dengan Seaborn",
+              "description_content": "Membuat visualisasi statistik yang menarik menggunakan library Seaborn.",
+              "video_url": "https://www.youtube.com/watch?v=GcXcSZ0gQps",
+              "video_duration": 2100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Pengembangan Game dengan Unity dan C#",
+      "slug": "pengembangan-game-dengan-unity-dan-csharp",
+      "short_description": "Belajar membuat game 2D dan 3D dengan Unity dan C#",
+      "description": "Kursus ini mengajarkan pengembangan game menggunakan engine Unity dan bahasa pemrograman C#. Pelajari konsep dasar game development, fisika, animasi, dan cara membuat game 2D dan 3D yang menarik.",
+      "level": "Beginner",
+      "duration": 660,
+      "categories": ["Programming", "C#", "Unity", "Game Development"],
+      "modules": [
+        {
+          "title": "Dasar-dasar Unity",
+          "description": "Memahami interface dan konsep dasar Unity",
+          "lessons": [
+            {
+              "title": "Pengenalan Unity dan Interface",
+              "description_content": "Mengenal Unity Engine, interface, dan cara navigasi di editor.",
+              "video_url": "https://www.youtube.com/watch?v=pwZpJzpE2lQ",
+              "video_duration": 1800
+            },
+            {
+              "title": "GameObject dan Component",
+              "description_content": "Memahami konsep GameObject dan Component sebagai dasar pengembangan game di Unity.",
+              "video_url": "https://www.youtube.com/watch?v=9ZEu_I-ido4",
+              "video_duration": 2100
+            }
+          ]
+        },
+        {
+          "title": "Scripting dengan C#",
+          "description": "Mempelajari pemrograman game dengan C# di Unity",
+          "lessons": [
+            {
+              "title": "Dasar-dasar C# untuk Unity",
+              "description_content": "Memahami sintaks C# dan cara mengimplementasikannya di Unity.",
+              "video_url": "https://www.youtube.com/watch?v=pSiIHe2uZ2w",
+              "video_duration": 2400
+            },
+            {
+              "title": "Input dan Movement",
+              "description_content": "Belajar menangani input pengguna dan mengimplementasikan pergerakan karakter.",
+              "video_url": "https://www.youtube.com/watch?v=dwcT-Dch0bA",
+              "video_duration": 2100
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+/* Custom styles for the course platform */
+
+/* Video player custom styles */
+#progress-bar {
+  -webkit-appearance: none;
+  height: 5px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: background 0.2s;
+}
+
+#progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+}
+
+#progress-bar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: none;
+}
+
+#volume-slider {
+  -webkit-appearance: none;
+  height: 3px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+#volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  border: none;
+}
+
+/* Module and lesson styles */
+.module-trigger:hover .module-icon {
+  color: #3b82f6;
+}
+
+.lesson-item.active {
+  background-color: #f3f4f6;
+}
+
+/* YouTube player container */
+#youtube-player {
+  position: relative;
+  z-index: 1;
+}
+
+/* Controls overlay */
+#video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Make sure controls are above the iframe */
+.aspect-video {
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar-toggle {
+    display: block;
+  }
+}

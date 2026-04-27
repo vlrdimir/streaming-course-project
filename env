@@ -1,0 +1,81 @@
+#--------------------------------------------------------------------
+# Example Environment Configuration file
+#
+# This file can be used as a starting point for your own
+# custom .env files, and contains most of the possible settings
+# available in a default install.
+#
+# By default, all of the settings are commented out. If you want
+# to override the setting, you must un-comment it by removing the '#'
+# at the beginning of the line.
+#--------------------------------------------------------------------
+
+#--------------------------------------------------------------------
+# ENVIRONMENT
+#--------------------------------------------------------------------
+
+# CI_ENVIRONMENT = production
+
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+
+# app.baseURL = ''
+# If you have trouble with `.`, you could also use `_`.
+# app_baseURL = ''
+# app.forceGlobalSecureRequests = false
+# app.CSPEnabled = false
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+
+# database.default.DSN = "host=your-neon-host port=5432 dbname=your-database user=your-user password='your-password' sslmode=require channel_binding=require"
+# database.default.DBDriver = Postgre
+# database.default.schema = public
+# database.default.charset = utf8
+# database.default.port = 5432
+
+# If you use MySQLi as tests, first update the values of Config\Database::$tests.
+# database.tests.hostname = localhost
+# database.tests.database = ci4_test
+# database.tests.username = root
+# database.tests.password = root
+# database.tests.DBDriver = Postgre
+# database.tests.DBPrefix =
+# database.tests.charset = utf8
+# database.tests.DBCollat =
+# database.tests.port = 5432
+
+#--------------------------------------------------------------------
+# ENCRYPTION
+#--------------------------------------------------------------------
+
+# encryption.key =
+
+#--------------------------------------------------------------------
+# SESSION
+#--------------------------------------------------------------------
+
+# session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
+# session.savePath = null
+
+#--------------------------------------------------------------------
+# LOGGER
+#--------------------------------------------------------------------
+
+# logger.threshold = 4
+
+#--------------------------------------------------------------------
+# XENDIT PAYMENT LINKS
+#--------------------------------------------------------------------
+
+# xendit.baseUrl = 'https://api.xendit.co/'
+# xendit.secretKey = ''
+# xendit.callbackToken = ''
+# xendit.successRedirectUrl = 'http://localhost:8080/payment/xendit/success'
+# xendit.failureRedirectUrl = 'http://localhost:8080/payment/xendit/failure'
+# xendit.invoiceDuration = 86400
+# xendit.currency = 'IDR'
+# xendit.timeout = 30
+# xendit.connectTimeout = 10
