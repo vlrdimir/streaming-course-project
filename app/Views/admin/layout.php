@@ -131,6 +131,7 @@ $adminDisplayName = trim((string) (session()->get('full_name') ?: session()->get
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.js"></script>
     <script src="<?= base_url('assets/js/admin-scripts.js') ?>"></script>
 </body>
 
