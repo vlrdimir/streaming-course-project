@@ -74,6 +74,7 @@
                         <?php foreach ($paymentTransactions as $transaction): ?>
                             <?php
                                 $invoiceUrl = trim((string) ($transaction['xendit_invoice_url'] ?? $transaction['checkout_url'] ?? ''));
+                                $invoicePdfUrl = site_url('user/payment-history/invoice/' . $transaction['id']);
                                 $detailCourseUrl = site_url('user/view-course/' . $transaction['course_id']);
                             ?>
                             <tr>
@@ -106,10 +107,15 @@
                                 </td>
                                 <td class="px-6 py-4 text-sm">
                                     <div class="flex flex-col items-start gap-2">
-                                        <?php if ($invoiceUrl !== ''): ?>
+                                        <?php if (($transaction['status'] ?? null) === 'pending' && $invoiceUrl !== ''): ?>
                                             <a href="<?= esc($invoiceUrl) ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-2 bg-primary text-primary-foreground rounded-md text-xs font-medium hover:bg-primary/90">
                                                 <i class="fa-solid fa-receipt mr-2"></i>
-                                                <?= ($transaction['status'] ?? null) === 'pending' ? 'Lanjut Bayar' : 'Lihat Invoice' ?>
+                                                Lanjut Bayar
+                                            </a>
+                                        <?php else: ?>
+                                            <a href="<?= esc($invoicePdfUrl) ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-2 bg-primary text-primary-foreground rounded-md text-xs font-medium hover:bg-primary/90">
+                                                <i class="fa-solid fa-file-pdf mr-2"></i>
+                                                Lihat Invoice
                                             </a>
                                         <?php endif; ?>
                                         <a href="<?= $detailCourseUrl ?>" class="inline-flex items-center px-3 py-2 border border-muted-foreground text-muted-foreground rounded-md text-xs font-medium hover:bg-muted hover:text-foreground">

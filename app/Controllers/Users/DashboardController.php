@@ -7,7 +7,10 @@ use App\Models\CourseModel;
 use App\Models\CoursePaymentTransactionModel;
 use App\Models\EnrollmentModel;
 use App\Models\LessonProgressModel;
+use Config\Dompdf as DompdfConfig;
 use DateTimeImmutable;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class DashboardController extends BaseController
 {
@@ -93,6 +96,25 @@ class DashboardController extends BaseController
         ]);
     }
 
+    public function invoice(int $transactionId)
+    {
+        $userId = (int) $this->currentUser['id'];
+        $transaction = $this->paymentTransactionModel
+            ->select('course_payment_transactions.*, courses.title AS course_title, courses.slug AS course_slug')
+            ->join('courses', 'courses.id = course_payment_transactions.course_id', 'left')
+            ->where('course_payment_transactions.id', $transactionId)
+            ->where('course_payment_transactions.user_id', $userId)
+            ->first();
+
+        if (!$transaction) {
+            return redirect()->to(site_url('user/payment-history'))->with('error', 'Invoice pembayaran tidak ditemukan.');
+        }
+
+        $decoratedTransactions = $this->decoratePaymentTransactions([$transaction]);
+
+        return $this->streamInvoicePdf($decoratedTransactions[0]);
+    }
+
     private function decoratePaymentTransactions(array $paymentTransactions): array
     {
         foreach ($paymentTransactions as &$transaction) {
@@ -165,5 +187,83 @@ class DashboardController extends BaseController
         } catch (\Exception) {
             return $value;
         }
+    }
+
+    private function streamInvoicePdf(array $transaction)
+    {
+        try {
+            $config = new DompdfConfig();
+            $options = new Options();
+
+            foreach ($config->options as $key => $value) {
+                $options->set($key, $value);
+            }
+
+            $options->set('isRemoteEnabled', true);
+
+            if (!is_dir($config->options['font_dir'])) {
+                mkdir($config->options['font_dir'], 0755, true);
+            }
+
+            if (!is_dir($config->options['temp_dir'])) {
+                mkdir($config->options['temp_dir'], 0755, true);
+            }
+
+            $dompdf = new Dompdf($options);
+            $dompdf->setPaper('A4', 'portrait');
+            $dompdf->loadHtml(view('user/invoice_template', $this->buildInvoiceViewData($transaction)));
+            $dompdf->render();
+
+            $referenceCode = trim((string) ($transaction['reference_code'] ?? 'invoice-' . $transaction['id']));
+            $safeFilename = preg_replace('/[^A-Za-z0-9\-_]+/', '-', strtolower($referenceCode));
+
+            return $dompdf->stream(($safeFilename ?: 'invoice') . '.pdf', [
+                'Attachment' => false,
+            ]);
+        } catch (\Throwable $exception) {
+            log_message('error', 'Failed to generate payment invoice PDF: {message}', [
+                'message' => $exception->getMessage(),
+            ]);
+
+            return redirect()->to(site_url('user/payment-history'))->with('error', 'Gagal membuat invoice PDF. Silakan coba lagi.');
+        }
+    }
+
+    private function buildInvoiceViewData(array $transaction): array
+    {
+        $customerName = trim((string) ($transaction['customer_name'] ?? ''));
+
+        if ($customerName === '') {
+            $customerName = trim((string) ($this->currentUser['full_name'] ?? $this->currentUser['username'] ?? 'Peserta Kursus'));
+        }
+
+        $courseTitle = trim((string) ($transaction['course_title'] ?? 'Kursus Premium'));
+        $statusLabel = (string) ($transaction['status_meta']['label'] ?? ucfirst((string) ($transaction['status'] ?? 'pending')));
+        $statusClass = match ($transaction['status'] ?? null) {
+            'paid' => 'paid',
+            'failed' => 'failed',
+            'expired' => 'expired',
+            'cancelled' => 'cancelled',
+            default => 'pending',
+        };
+
+        return [
+            'transaction' => $transaction,
+            'invoiceTitle' => 'Invoice Pembayaran Kursus',
+            'invoiceNumber' => trim((string) ($transaction['reference_code'] ?? ('INV-' . $transaction['id']))),
+            'customerName' => $customerName,
+            'customerEmail' => trim((string) ($transaction['customer_email'] ?? $this->currentUser['email'] ?? '-')),
+            'courseTitle' => $courseTitle,
+            'courseUrl' => site_url('user/view-course/' . $transaction['course_id']),
+            'issuedAt' => $this->formatTimestamp($transaction['created_at'] ?? null) ?? '-',
+            'paidAt' => $this->formatTimestamp($transaction['paid_at'] ?? null),
+            'expiresAt' => $this->formatTimestamp($transaction['expires_at'] ?? null),
+            'statusLabel' => $statusLabel,
+            'statusClass' => $statusClass,
+            'amountLabel' => strtoupper((string) ($transaction['currency'] ?? 'IDR')) . ' ' . number_format((int) ($transaction['amount'] ?? 0)),
+            'providerLabel' => strtoupper((string) ($transaction['provider'] ?? 'xendit')),
+            'invoiceUrl' => trim((string) ($transaction['xendit_invoice_url'] ?? $transaction['checkout_url'] ?? '')),
+            'failureMessage' => trim((string) ($transaction['failure_message'] ?? '')),
+        ];
     }
 }
