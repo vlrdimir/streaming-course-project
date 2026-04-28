@@ -22,16 +22,11 @@ class CorrectPaymentAmountColumnsAndGenericTransactionFields extends Migration
                 'constraint' => 500,
                 'null' => true,
             ],
-            'status_payload_json' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
         ]);
 
         $this->db->query(
             "UPDATE course_payment_transactions
-            SET checkout_url = COALESCE(checkout_url, xendit_invoice_url),
-                status_payload_json = COALESCE(status_payload_json, last_webhook_payload, response_payload, metadata_payload)"
+            SET checkout_url = COALESCE(checkout_url, xendit_invoice_url)"
         );
     }
 
@@ -39,7 +34,6 @@ class CorrectPaymentAmountColumnsAndGenericTransactionFields extends Migration
     {
         $this->forge->dropColumn('course_payment_transactions', [
             'checkout_url',
-            'status_payload_json',
         ]);
 
         $this->db->query(

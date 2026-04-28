@@ -308,10 +308,6 @@ class CourseController extends BaseController
                 'expires_at' => $providerMetadata['expires_at'] ?? null,
                 'success_redirect_url' => $providerMetadata['success_redirect_url'] ?? null,
                 'failure_redirect_url' => $providerMetadata['failure_redirect_url'] ?? null,
-                'metadata_payload' => $this->encodeJson($providerMetadata),
-                'request_payload' => $this->encodeJson($paymentLink['request_payload'] ?? []),
-                'response_payload' => $this->encodeJson($paymentLink['response_payload'] ?? []),
-                'status_payload_json' => $this->encodeJson($paymentLink['response_payload'] ?? []),
                 'failure_code' => null,
                 'failure_message' => null,
             ]);
@@ -384,14 +380,8 @@ class CourseController extends BaseController
             'amount' => (int) ($course['price_amount'] ?? 0),
             'currency' => strtoupper((string) ($course['price_currency'] ?? 'IDR')),
             'customer_email' => (string) ($this->currentUser['email'] ?? ''),
-            'customer_name' => $customerName,
-            'metadata_payload' => $this->encodeJson([
-                'course_title' => (string) $course['title'],
-                'course_slug' => (string) ($course['slug'] ?? ''),
-                'user_id' => $userId,
-                'course_id' => $courseId,
-            ]),
-        ], true);
+                'customer_name' => $customerName,
+            ], true);
 
         if (!$transactionId) {
             throw new RuntimeException('Transaksi pending tidak berhasil dibuat.');
@@ -404,13 +394,6 @@ class CourseController extends BaseController
         }
 
         return $transaction;
-    }
-
-    private function encodeJson(array $payload): ?string
-    {
-        $encoded = json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-        return $encoded === false ? null : $encoded;
     }
 
     private function isTruthy($value): bool

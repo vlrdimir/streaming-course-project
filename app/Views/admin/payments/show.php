@@ -110,26 +110,6 @@
                 </div>
             </div>
 
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-database me-1"></i>
-                    Payload Snapshots
-                </div>
-                <div class="card-body">
-                    <?php if (empty($payloadSections)): ?>
-                        <div class="alert alert-info mb-0">
-                            No request, response, or webhook payloads are stored yet.
-                        </div>
-                    <?php else: ?>
-                        <?php foreach ($payloadSections as $section): ?>
-                            <div class="mb-4">
-                                <h5 class="border-bottom pb-2"><?= esc($section['title']) ?></h5>
-                                <pre class="bg-light border rounded p-3 mb-0" style="max-height: 320px; overflow: auto;"><?= esc($section['content']) ?></pre>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </div>
         </div>
     </div>
 </div>

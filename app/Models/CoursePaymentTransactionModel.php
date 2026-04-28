@@ -40,12 +40,7 @@ class CoursePaymentTransactionModel extends Model
         'last_webhook_at',
         'failure_code',
         'failure_message',
-        'metadata_payload',
-        'request_payload',
-        'response_payload',
-        'last_webhook_payload',
         'checkout_url',
-        'status_payload_json',
     ];
 
     protected $useTimestamps = true;
