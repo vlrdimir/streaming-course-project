@@ -93,7 +93,6 @@ class PaymentController extends BaseController
                 ['label' => 'Success Redirect URL', 'value' => $transaction['success_redirect_url'] ?? null, 'is_link' => true],
                 ['label' => 'Failure Redirect URL', 'value' => $transaction['failure_redirect_url'] ?? null, 'is_link' => true],
             ]),
-            'payloadSections' => $this->buildPayloadSections($transaction),
         ]);
     }
 
@@ -106,19 +105,6 @@ class PaymentController extends BaseController
             'cancelled' => ['label' => 'Cancelled', 'class' => 'bg-dark'],
             default => ['label' => 'Pending', 'class' => 'bg-warning text-dark'],
         };
-    }
-
-    private function buildPayloadSections(array $transaction): array
-    {
-        $sections = [
-            ['title' => 'Status Payload', 'content' => $this->formatPayload($transaction['status_payload_json'] ?? null)],
-            ['title' => 'Last Webhook Payload', 'content' => $this->formatPayload($transaction['last_webhook_payload'] ?? null)],
-            ['title' => 'Request Payload', 'content' => $this->formatPayload($transaction['request_payload'] ?? null)],
-            ['title' => 'Response Payload', 'content' => $this->formatPayload($transaction['response_payload'] ?? null)],
-            ['title' => 'Metadata Payload', 'content' => $this->formatPayload($transaction['metadata_payload'] ?? null)],
-        ];
-
-        return array_values(array_filter($sections, static fn(array $section): bool => $section['content'] !== null));
     }
 
     private function filterFacts(array $facts): array
@@ -160,26 +146,4 @@ class PaymentController extends BaseController
         }
     }
 
-    private function formatPayload(?string $payload): ?string
-    {
-        if ($payload === null) {
-            return null;
-        }
-
-        $payload = trim($payload);
-
-        if ($payload === '') {
-            return null;
-        }
-
-        $decoded = json_decode($payload, true);
-
-        if (json_last_error() === JSON_ERROR_NONE) {
-            $pretty = json_encode($decoded, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-            return $pretty === false ? $payload : $pretty;
-        }
-
-        return $payload;
-    }
 }
