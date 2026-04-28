@@ -177,15 +177,12 @@ class PaymentCallbackController extends BaseController
     private function buildWebhookUpdateData(array $transaction, array $payload, string $persistedStatus, ?string $rawStatus): array
     {
         $now = date('Y-m-d H:i:s');
-        $payloadJson = $this->encodeJson($payload);
         $updateData = [
             'status' => $persistedStatus,
             'xendit_status' => $rawStatus !== null && trim($rawStatus) !== '' ? trim($rawStatus) : ($transaction['xendit_status'] ?? null),
             'xendit_invoice_id' => $this->extractFirstString($payload, ['id', 'invoice_id', 'payment_id']) ?? ($transaction['xendit_invoice_id'] ?? null),
             'xendit_external_id' => $this->extractFirstString($payload, ['external_id', 'reference_code']) ?? ($transaction['xendit_external_id'] ?? null),
             'last_webhook_at' => $now,
-            'last_webhook_payload' => $payloadJson,
-            'status_payload_json' => $payloadJson,
             'failure_code' => $this->extractFirstString($payload, ['failure_code', 'error_code']),
             'failure_message' => $this->extractFirstString($payload, ['failure_message', 'error_message', 'message']),
         ];
@@ -292,13 +289,6 @@ class PaymentCallbackController extends BaseController
         } catch (\Exception) {
             return null;
         }
-    }
-
-    private function encodeJson(array $payload): ?string
-    {
-        $encoded = json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
-        return $encoded === false ? null : $encoded;
     }
 
     private function resolveStatusMeta(?string $status, string $returnContext): array
