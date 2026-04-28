@@ -132,22 +132,6 @@ class CreateCoursePaymentTransactionsTable extends Migration
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'metadata_payload' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
-            'request_payload' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
-            'response_payload' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
-            'last_webhook_payload' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
